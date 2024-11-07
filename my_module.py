@@ -23,9 +23,18 @@ def largest_prime_factor(n):
             f += 1
     return n
 
+def fast_flip_num(n):
+    m = 0
+    while n != 0:
+        m *= 10
+        n, d = divmod(n, 10)
+        m += d
+    return m
+
 if __name__ == '__main__':
     print('Test plot:')
     plot_function(lambda x: x*x, -1, 1)
     greeting = Chooser(['Hi!', 'Hello.', 'How are you?'])
     print('Test greeting:', greeting.choose())
     print('Test factor:', largest_prime_factor(600851475143))
+    print('Test flip:', fast_flip_num(123))
